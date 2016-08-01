@@ -1,0 +1,55 @@
+import processing.serial.*;
+ 
+Serial myPort;  // Create object from Serial class
+ 
+PFont f;
+ 
+void setup() {
+  size(640, 130);
+   
+  println(Serial.list());
+  
+  myPort = new Serial(this, "COM15", 9600);
+   
+     f = createFont("Times New Roman",16,true);
+      
+}
+ 
+void draw() {
+  fill(95);
+  textFont(f, 16);
+  text("Control Two Servo, switch between then using the number 1 and 2 keys on your keyboard", 10, 30);
+  text("Use the L key to rotate the servo 90' left, and the R key to rotate it 90' Right", 10, 60);
+  text("Use the S key to return to the center", 10, 90);
+}
+ 
+void keyPressed() {
+   
+  switch (key) {
+    case 'a':
+      println("A pressed");
+      myPort.write('a'); //turns left
+      break;
+    case 's':
+      println("S pressed");
+      myPort.write('s'); //stops turning
+      break;
+    case 'd':
+      println("D pressed");
+      myPort.write('d'); //turns right
+      break;    
+    
+    case 'f':
+      println("F pressed");
+      myPort.write('f'); //turns right
+      break;    
+    
+ case 'q':
+      println("Q pressed");
+      myPort.write('q'); //turns right
+      break;
+    
+    default: 
+      break;
+  }
+}

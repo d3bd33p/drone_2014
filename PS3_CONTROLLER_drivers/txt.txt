@@ -1,0 +1,43 @@
+"USB Joystick          "
+
+
+
+<<< >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+USB Joystick           has:
+ 4 sliders
+ 13 buttons
+ 2 sticks
+
+<<< available USB Joystick           sliders: >>>
+
+     0: Y Axis absolute
+     1: X Axis absolute
+     2: Z Rotation absolute
+     3: Z Axis absolute
+
+<<< >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<<< available USB Joystick           buttons: >>>
+
+     0: cooliehat: Hat Switch
+     1: Button 0
+     2: Button 1
+     3: Button 2
+     4: Button 3
+     5: Button 4
+     6: Button 5
+     7: Button 6
+     8: Button 7
+     9: Button 8
+     10: Button 9
+     11: Button 10
+     12: Button 11
+
+<<< >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<<< available USB Joystick           sticks: >>>
+
+     0: X Axis Y Axis
+     1: Z Axis Z Rotation
+
+<<< >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

@@ -1,0 +1,9 @@
+C:\Users\Administrator\Desktop\Working Joystick Test\Joystick_Test\Joystick_Test\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Working Joystick Test\Joystick_Test\Joystick_Test\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Administrator\Desktop\Working Joystick Test\Joystick_Test\Joystick_Test\obj\Debug\Joystick_Test.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\Working Joystick Test\Joystick_Test\Joystick_Test\bin\Debug\Joystick_Test.exe
+C:\Users\Administrator\Desktop\Working Joystick Test\Joystick_Test\Joystick_Test\bin\Debug\Joystick_Test.pdb
+C:\Users\Administrator\Desktop\Working Joystick Test\Joystick_Test\Joystick_Test\obj\Debug\Joystick_Test.exe
+C:\Users\Administrator\Desktop\Working Joystick Test\Joystick_Test\Joystick_Test\obj\Debug\Joystick_Test.pdb
+C:\Users\Administrator\Desktop\Working Joystick Test\Joystick_Test\Joystick_Test\bin\Debug\VerticalProgressBar.dll
+C:\Users\Administrator\Desktop\Working Joystick Test\Joystick_Test\Joystick_Test\obj\Debug\WindowsFormsApplication1.Form1.resources

@@ -1,0 +1,52 @@
+#include <Servo.h>
+#include <SoftwareSerial.h>
+  
+Servo myservo_one;  // create servo object to control a servo
+Servo myservo_two;  
+char val;
+int currentServo=0;  
+SoftwareSerial xBeeSerial = SoftwareSerial(0,1);
+
+void setup()
+{
+  myservo_one.attach(9);  // attaches the servo on pin 9 to the servo object
+  
+  myservo_two.attach(10);  // attaches the servo on pin 9 to the servo object
+  
+  
+  Serial.begin(9600); //start serial output at 9600
+  xBeeSerial.begin(9600);
+}
+  
+void loop()
+{
+   
+  if(xBeeSerial.available()){
+    val = xBeeSerial.read();
+     
+         if (val == 'a') { //if the last key press was l, rotates to 0 degrees
+         myservo_one.write(10);
+         myservo_two.write(10);
+         delay(5);
+         }
+        
+    
+     
+    else if (val == 's') { //if the last key press was r, rotates to 180'
+         myservo_one.write(150);
+         myservo_two.write(20);
+delay(5);       }
+    
+     
+    else if (val == 'd') { //if the last key press was s, returns to the center
+         myservo_one.write(120);
+         myservo_two.write(40);
+        delay(5);
+    }
+   else if (val == 'o') { //if the last key press was s, returns to the center
+         myservo_one.write(60);
+         myservo_two.write(60);
+        delay(5);
+    }
+
+}}

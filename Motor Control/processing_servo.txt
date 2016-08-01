@@ -1,0 +1,46 @@
+import processing.serial.*;
+ 
+Serial myPort;  // Create object from Serial class
+ 
+PFont f;
+ 
+void setup() {
+  size(640, 130);
+   
+  println(Serial.list());
+  
+  myPort = new Serial(this, "COM9", 9600);
+   
+     f = createFont("Times New Roman",16,true);
+      
+}
+ 
+void draw() {
+  if (keyPressed==true)
+{ 
+   if(key == 'a')
+{
+  println("A");
+myPort.write('a');
+}
+
+else if(key == 's')
+{
+println("S");
+  myPort.write('s');
+}
+
+else if(key == 'd')
+{
+  println("D");
+myPort.write('d');
+}
+  
+}
+else if (keyPressed==false)
+{println("O");
+
+myPort.write('o');
+}
+
+}

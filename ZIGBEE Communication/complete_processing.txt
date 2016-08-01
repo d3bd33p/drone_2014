@@ -1,0 +1,158 @@
+import processing.serial.*;
+ 
+Serial myPort;  
+
+boolean x = false;
+boolean y = false;
+boolean a = false;
+boolean b = false;
+boolean c = false;
+boolean d = false;
+//boolean m = false;
+boolean n = false;
+//boolean f = false;
+boolean e = false;
+boolean g = false;
+boolean h = false;
+boolean i = false;
+boolean j = false;
+boolean p = false;
+boolean q = false;
+boolean r = false;
+boolean s = false;
+
+
+void setup() {
+
+size(640, 130);
+
+println(Serial.list());
+  
+myPort = new Serial(this, "COM9", 9600);}
+
+
+void draw() {
+ 
+ 
+  
+if (e){ println("E");
+myPort.write('e');}
+
+
+if (n){ println("N");
+myPort.write('n');}
+
+if (n == false&&e == false){ println("NA_E_N");
+myPort.write('o');
+delay(100);}
+
+
+
+
+
+if (j){ println("J");
+myPort.write('j');}
+
+if (h){ println("H");
+myPort.write('h');}
+
+if (h == false&&j == false&&g == false&&i == false){ println("NA_H_J");
+myPort.write('l');
+delay(100);}
+
+
+
+if (g){ println("G");
+myPort.write('g');}
+
+if (i){ println("I");
+myPort.write('i');}
+
+
+
+if (x&&p){ println("X+P");
+myPort.write('p');}
+
+if (x&&q){ println("X+Q");
+myPort.write('q');}
+
+if (x&&r){ println("X+R");
+myPort.write('r');}
+
+if (x&&s){ println("X+S");
+myPort.write('s');}
+
+if (y&&p){ println("Y+P");
+myPort.write('t');}
+
+if (y&&q){ println("Y+Q");
+myPort.write('u');} 
+
+
+if (a){ println("A");
+myPort.write('a');}
+
+if (b){ println("B");
+myPort.write('b');}
+
+if (c){ println("C");
+myPort.write('c');}
+
+if (d){ println("D");
+myPort.write('d');}
+
+}
+
+
+
+
+void keyPressed() {
+ 
+if (key == 'x') x = true; 
+if (key == 'y') y = true; 
+if (key == 'a') a = true; 
+if (key == 'b') b = true;
+if (key == 'c') c = true;
+if (key == 'd') d = true;
+//if (key == 'm') m = true;
+if (key == 'n') n = true;
+//if (key == 'f') f = true;
+if (key == 'e') e = true;
+if (key == 'g') g = true;
+if (key == 'h') h = true;
+if (key == 'i') i = true;
+if (key == 'j') j = true;
+if (key == 'p') p = true;
+if (key == 'q') q = true;
+if (key == 'r') r = true;
+if (key == 's') s = true; 
+ 
+}
+ 
+void keyReleased() {
+if (key == 'x') x = false; 
+if (key == 'y') y = false; 
+if (key == 'a') a = false; 
+if (key == 'b') b = false;
+if (key == 'c') c = false;
+if (key == 'd') d = false;
+//if (key == 'm') m = false;
+if (key == 'n') n = false;
+//if (key == 'f') f = false;
+if (key == 'e') e = false;
+if (key == 'g') g = false;
+if (key == 'h') h = false;
+if (key == 'i') i = false;
+if (key == 'j') j = false;
+if (key == 'p') p = false;
+if (key == 'q') q = false;
+if (key == 'r') r = false;
+if (key == 's') s = false; 
+
+}
+
+void delay(int delay)
+{
+  int time = millis();
+  while(millis() - time <= delay);
+}

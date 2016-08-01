@@ -1,0 +1,185 @@
+#include <Servo.h>
+#include <SoftwareSerial.h>
+const int MAX_THROTTLE=170;
+const int MID1_THROTTLE=110;
+const int MID2_THROTTLE=90;
+const int LOW_THROTTLE=60;
+
+const int SERVO_HIGH1=150;
+const int SERVO_HIGH2=120;
+const int SERVO_LOW1=30;
+const int SERVO_LOW2=60;
+
+Servo myservo_one;  
+Servo myservo_two;  
+Servo myservo_three;
+Servo myservo_four;
+Servo myservo_five;
+Servo myservo_six;
+
+int hold_servohigh=120, hold_servolow=60, hold_motor;
+char val;
+
+       
+SoftwareSerial xBeeSerial = SoftwareSerial(0,1);
+
+void setup()
+{
+
+myservo_one.attach(9);  
+myservo_two.attach(10);
+
+myservo_three.attach(5);
+myservo_four.attach(6);
+
+myservo_five.attach(3);
+delay(1);
+myservo_five.write(40);
+
+
+myservo_six.attach(11);
+delay(1);
+myservo_six.write(170);  
+  
+Serial.begin(9600); 
+xBeeSerial.begin(9600);
+}
+
+
+
+
+void loop()
+{
+   
+  if(xBeeSerial.available())
+{
+   val = xBeeSerial.read();
+
+//ROLLING
+     
+         if (val == 'e') { 
+         myservo_three.write(60);
+         myservo_four.write(120);
+         delay(5);
+         }
+
+
+         else if (val == 'n') { 
+         myservo_three.write(120);
+         myservo_four.write(60);
+         delay(5);
+         }
+        
+
+         else if (val == 'o') { 
+         myservo_three.write(90);
+         myservo_four.write(90);
+         delay(5);
+         }
+
+//YAWING
+
+         else if (val == 'g') { 
+         myservo_one.write(hold_servolow);
+         myservo_two.write(hold_servohigh);
+         delay(5);
+         }
+
+         
+         else if (val == 'i') { 
+         myservo_one.write(hold_servohigh);
+         myservo_two.write(hold_servolow);
+         delay(5);
+         }
+
+
+         else if (val == 'l') { 
+         myservo_one.write(90);
+         myservo_two.write(90);
+         delay(5);
+         }
+
+//PITCHING
+    
+         else if (val == 'j') { 
+         myservo_one.write(hold_servohigh);
+         myservo_two.write(hold_servohigh);
+         delay(5);
+         }
+
+         
+         else if (val == 'h') { 
+         myservo_one.write(hold_servolow);
+         myservo_two.write(hold_servolow);
+         delay(5);
+         }
+
+
+        
+
+//RUDDERVATOR_CONTROL
+
+         else if (val == 't') { 
+         hold_servohigh=SERVO_HIGH1;
+         hold_servolow=SERVO_LOW1;
+         }
+
+         else if (val == 'u') { 
+         hold_servohigh=SERVO_HIGH2;
+         hold_servolow=SERVO_LOW2;
+         }
+
+
+//THROTTLE_ON_OFF
+         
+         else if (val == 'c') { 
+         myservo_five.write(110);
+         delay(5);
+         }
+   
+
+         
+         else if (val == 'd') { 
+         myservo_five.write(30);
+         delay(5);
+         }
+    
+
+
+//THROTTLE_CONTROL
+
+
+         else if (val == 'p') { 
+         myservo_five.write(LOW_THROTTLE);
+         delay(5);
+         }
+
+         else if (val == 'q') { 
+         myservo_five.write(MID2_THROTTLE);
+         delay(5);
+         }
+
+         else if (val == 'r') { 
+         myservo_five.write(MID1_THROTTLE);
+         delay(5);
+         }
+
+         else if (val == 's') { 
+         myservo_five.write(MAX_THROTTLE);
+         delay(5);
+         }
+
+//LANDING_GEARS
+
+
+         else if (val == 'a') { 
+         myservo_six.write(170);
+         delay(5);
+         }
+
+
+         else if (val == 'b') { 
+         myservo_six.write(90);
+         delay(5);
+         }
+}}

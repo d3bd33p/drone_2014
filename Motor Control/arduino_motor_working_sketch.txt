@@ -1,0 +1,49 @@
+#include <Servo.h>
+  
+Servo myservo_one;  // create servo object to control a servo
+  
+char val;
+int currentServo=0;  
+void setup()
+{
+  myservo_one.attach(9);  // attaches the servo on pin 9 to the servo object
+  delay(1);
+  myservo_one.write(40); //sets both servo's at 90 degrees
+
+  
+  Serial.begin(9600); //start serial output at 9600
+}
+  
+void loop()
+{
+   
+  if(Serial.available()){
+    val = Serial.read();
+     
+         if (val == 's') { //if the last key press was l, rotates to 0 degrees
+         myservo_one.write(90);
+         }
+        
+    
+     
+    if (val == 'd') { //if the last key press was r, rotates to 180'
+         myservo_one.write(110);
+       }
+    
+if (val == 'f') { //if the last key press was s, returns to the center
+         myservo_one.write(170);
+        
+    }
+     
+    if (val == 'a') { //if the last key press was s, returns to the center
+         myservo_one.write(50);
+        
+    }
+
+if (val == 'q') { //if the last key press was s, returns to the center
+         myservo_one.write(30);
+        
+    }
+   
+  
+}}
